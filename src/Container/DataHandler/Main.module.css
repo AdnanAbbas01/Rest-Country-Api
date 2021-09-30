@@ -8,7 +8,6 @@
 
 .colorChange{
     background-color: hsl(207, 26%, 17%);
-    height: 100vh;
 }
 
 .data{
@@ -26,4 +25,8 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(240, 240, 240);
+}
+
+.darkModeSpinner{
+    background-color: hsl(207, 26%, 17%);
 }

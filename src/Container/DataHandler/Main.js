@@ -92,7 +92,9 @@ class Main extends Component{
            changed = {this.searchCountry}
            darkMode={this.state.darkMode}/>
            {this.state.spinner ? 
+           <div className={this.state.darkMode?[classes.spinnermain,classes.darkModeSpinner].join(' '):classes.spinnermain}>
              <Spinner />
+             </div>
           :<div className={classes.data}>
             {data}
           </div>}
