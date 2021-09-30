@@ -8,7 +8,9 @@
 
 .colorChange{
     background-color: hsl(207, 26%, 17%);
+    height: 80vh;
 }
+
 .data{
     display: grid;
     padding: 0 50px;
