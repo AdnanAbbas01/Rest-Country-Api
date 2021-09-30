@@ -65,10 +65,14 @@ class Main extends Component{
     darkModeHandler = () => {
       this.setState({darkMode:!this.state.darkMode});
     }
+
+    setStateOfParent = (newState) => {
+      this.setState({darkMode:!newState});
+    }
+
     render(){
        let data = null;
         if(this.state.data){
-          console.log(this.state.data[0])
           data = this.state.data.map((value,index)=>{
             if(index < 10){
             return <Data darkMode = {this.state.darkMode} 
@@ -92,7 +96,7 @@ class Main extends Component{
           :<div className={classes.data}>
             {data}
           </div>}
-          
+          <Route path='/country' render={()=> <CountryDetails darkMode={this.state.darkMode} setStateOfParent={this.setStateOfParent}/>} />
            </div>
       )
     }

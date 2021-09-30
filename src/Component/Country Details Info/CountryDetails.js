@@ -4,27 +4,21 @@ import axios from "axios";
 import Navbar from "../NavBar/Navbar";
 import { withRouter } from "react-router";
 import Spinner from "../Spinner/Spinner";
-// import { Component } from "react/cjs/react.production.min";
 
 class CountryDetails extends Component {
 
-    
+
     state = {
         country : null,
         name: null,
-        darkMode: false
+        darkMode : this.props.darkMode
     }
     componentWillMount () {
         const query = new URLSearchParams(this.props.location.search);
          for(let param of query.entries()){
-            if(param[0] == 'darkMode'){
-               this.setState({darkMode:param[1]})
-            } 
-            else{
             this.setState({country: param[1]})
-            }
          }
-         console.log(this.state.darkMode);
+         
         }
 
     componentDidMount () {
@@ -39,10 +33,6 @@ class CountryDetails extends Component {
     backHandler = () => {
       this.props.history.push('/');
     }
-
-    darkModeHandler = () => {
-        this.setState({darkMode:!this.state.darkMode});
-      }
 
 render(){
     let nativeName = [];
@@ -65,13 +55,14 @@ render(){
             return <button className={classes.brdBtns}>{border}</button>
         })
     }
-        console.log(nativeName,currencies);
     }
+
+     
 
 
    return (
-     <div className={this.state.darkMode?[classes.detailsMain,classes.darkmode].join(' '):classes.detailsMain}>
-        <Navbar clicked={this.darkModeHandler} darkMode ={this.state.darkMode}/>
+     <div className={this.props.darkMode?[classes.detailsMain,classes.darkmode].join(' '):classes.detailsMain}>
+        <Navbar clicked={() => this.props.setStateOfParent(this.props.darkMode)} darkMode ={this.props.darkMode}/>
         <div className={classes.btn}>
         <button className={classes.back} onClick={this.backHandler}>Back</button>
         </div>
