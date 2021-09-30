@@ -1,0 +1,134 @@
+.detailsMain{
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.btn{
+
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    padding:  30px;
+    display: flex;
+    align-items: center;
+}
+
+.back{
+    box-sizing: border-box;
+    background-color: transparent;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.detailData{
+    box-sizing: border-box;
+    display: flex;
+    margin: 0;
+    padding: 0 50px;
+    height: 500px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imgDetail{
+    height: 400px;
+    width: 400px;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.details{
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    margin: 0;
+    padding: 5px;
+    font-weight: 700;
+}
+
+span{
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.border{
+    display: inline-block;
+    margin-top: 50px;
+    
+}
+.border p{
+    margin-right: 10px;
+}
+.brdBtns{
+    box-sizing: border-box;
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.darkmode{
+    background-color: hsl(207, 26%, 17%);
+}
+
+.darkmode .brdBtns{
+    background-color: hsl(208, 29%, 25%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+.darkmode p, .darkmode span,.darkmode .back{
+    color: #fff;
+}
+
+@media only screen and (max-width: 400px) {
+    
+    .detailsMain{
+        height: auto;
+    }
+    .detailData{
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+    }
+    .imgDetail{
+        height: 200px;
+        width: 200px;
+    }
+    
+    .img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .info{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .details{
+        width: auto;
+        height: auto;
+        display: block;
+        text-align: center;
+    }
+}

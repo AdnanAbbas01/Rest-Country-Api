@@ -1,0 +1,115 @@
+.designMain{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+    background-color: transparent;
+}
+
+.inpfilter{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input{
+    box-sizing: border-box;
+    height: 20px;
+    width: 300px;
+    padding: 20px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.input:focus{
+    outline: none;
+}
+
+.menu{
+    margin: 0;
+    position: relative;
+}
+
+
+.drop{
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+
+.dropdown{
+    position: absolute;
+    display: none;
+    top: 40px;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    font-weight: 600;
+    padding: 7px 20px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.menu:hover .dropdown{
+    display: block;
+    animation-name: dropdown;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes dropdown {
+     0%{
+         opacity: 0;
+     }
+     50%{
+         opacity: 0.5;
+     }
+     100%{
+         opacity: 1;
+     }
+    }
+
+
+.darkmode .input,.darkmode .dropdown,.darkmode .drop{
+    background-color: hsl(208, 29%, 25%);
+    color: #fff;
+}
+
+.darkmode ul li{
+    color: #fff;
+}
+
+@media only screen and (max-width: 400px) {
+    .inpfilter{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }   
+    .input{
+        margin-bottom: 20px;
+        width: 250px;
+    }
+    .drop{
+        padding: 10px;
+    }
+}
