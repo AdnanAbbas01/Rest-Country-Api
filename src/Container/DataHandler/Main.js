@@ -86,7 +86,7 @@ class Main extends Component{
         }
       return(
         <div>
-        <Route path='/' exact render={()=> <div className={this.state.darkMode?[classes.colorChange,classes.main].join(' '):null}> 
+        <Route path='/' exact render={()=> <div className={this.state.darkMode?[classes.main,classes.colorChange].join(' '):null}> 
         <Navbar clicked={this.darkModeHandler} darkMode={this.state.darkMode}/>
         <Design clicked={this.filterCountry}
         changed = {this.searchCountry}

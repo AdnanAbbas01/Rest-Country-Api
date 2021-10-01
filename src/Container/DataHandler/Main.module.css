@@ -18,15 +18,3 @@
     grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
 }
 
-.spinnermain{
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(240, 240, 240);
-}
-
-.darkModeSpinner{
-    background-color: hsl(207, 26%, 17%);
-}
