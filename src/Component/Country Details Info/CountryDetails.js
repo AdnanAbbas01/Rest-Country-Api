@@ -18,14 +18,14 @@ class CountryDetails extends Component {
         const query = new URLSearchParams(this.props.location.search);
          for(let param of query.entries()){
             this.setState({country: param[1]})
-        console.log(param[0],param[1]); 
+        
         }
         }
 
     componentDidMount () {
         axios.get(`https://restcountries.com/v3.1/name/${this.state.country}`)
         .then(res => {
-            console.log(res);
+           
           this.setState({
             name: res.data,
           })
