@@ -26,6 +26,11 @@
     color: black;
     border: none;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+.darkmodeBtn:hover{
+    transform: scale(1.02) translateY(-3px);
 }
 
 .darkmode{

@@ -19,11 +19,22 @@
 .back{
     box-sizing: border-box;
     background-color: transparent;
-    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
     border: none;
     padding: 10px 30px;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+.back:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 7px rgba(0,0,0,0.2);
+}
+
+.back:active{
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
 
 .detailData{

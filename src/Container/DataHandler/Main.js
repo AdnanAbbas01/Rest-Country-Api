@@ -54,7 +54,6 @@ class Main extends Component{
     secondPageHandler = (countryName) => {
       let queryParam = [];
       queryParam.push(encodeURIComponent('country')+'='+encodeURIComponent(countryName));
-      queryParam.push(encodeURIComponent('darkMode')+'='+encodeURIComponent(this.state.darkMode));
       const queryString = queryParam.join('&');
       this.props.history.push({
         pathname: '/country',
@@ -86,18 +85,21 @@ class Main extends Component{
           })
         }
       return(
-          <div className={this.state.darkMode?[classes.colorChange,classes.main].join(' '):null}> 
-           <Navbar clicked={this.darkModeHandler} darkMode={this.state.darkMode}/>
-           <Design clicked={this.filterCountry}
-           changed = {this.searchCountry}
-           darkMode={this.state.darkMode}/>
-           {this.state.spinner ? 
-           <div className={this.state.darkMode?[classes.spinnermain,classes.darkModeSpinner].join(' '):classes.spinnermain}>
-             <Spinner />
-             </div>
-          :<div className={classes.data}>
-            {data}
-          </div>}
+        <div>
+        <Route path='/' exact render={()=> <div className={this.state.darkMode?[classes.colorChange,classes.main].join(' '):null}> 
+        <Navbar clicked={this.darkModeHandler} darkMode={this.state.darkMode}/>
+        <Design clicked={this.filterCountry}
+        changed = {this.searchCountry}
+        darkMode={this.state.darkMode}/>
+        {this.state.spinner ?
+        <div className={this.state.darkMode?[classes.spinnermain,classes.darkModeSpinner].join(' '):classes.spinnermain}> 
+          <Spinner />
+          </div>
+       :<div className={classes.data}>
+         {data}
+       </div>}
+        </div>
+      } />
           <Route path='/country' render={()=> <CountryDetails darkMode={this.state.darkMode} setStateOfParent={this.setStateOfParent}/>} />
            </div>
       )
